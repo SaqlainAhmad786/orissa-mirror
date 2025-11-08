@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Orissa Mirror</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style type="text/tailwindcss">
+        @theme {
+            --color-redClr: #ED3500; 
+            --color-blueClr: #093FB4; 
+            --color-bgClr: #FFD8D8;
+            --color-blackClr: #222831;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="navbar" class="shadow-sm bg-white fixed z-50 top-0 left-0 right-0 duration-300">
+        <div class="grid md:grid-cols-3 grid-cols-2 items-center gap-2 sm:px-6 px-4 py-4 border-b border-neutral-300">
+            <div class="md:flex hidden items-center gap-2">
+                <a href="#" class="bg-redClr hover:bg-redClr/80 h-8 w-8 flex justify-center items-center rounded-full">
+                    <i data-lucide="facebook" class="w-4 h-4 text-white"></i>
+                </a>
+                <a href="#" class="bg-redClr hover:bg-redClr/80 h-8 w-8 flex justify-center items-center rounded-full">
+                    <i data-lucide="instagram" class="w-4 h-4 text-white"></i>
+                </a>
+                <a href="#" class="bg-redClr hover:bg-redClr/80 h-8 w-8 flex justify-center items-center rounded-full">
+                    <i data-lucide="linkedin" class="w-4 h-4 text-white"></i>
+                </a>
+                <a href="#" class="bg-redClr hover:bg-redClr/80 h-8 w-8 flex justify-center items-center rounded-full">
+                    <svg aria-label="X logo" width="16" height="12" viewBox="0 0 300 271"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill="white"
+                            d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="flex md:justify-center">
+                <img src="./images/logo.png" class="md:max-w-44 max-w-32" alt="Orissa Mirror Logo">
+            </div>
+            <div class="flex justify-end items-center gap-2">
+                <button class="btn btn-circle bg-blueClr border-blueClr hover:bg-blueClr/80 h-8 w-8">
+                    <i data-lucide="search" class="h-4 w-4 text-white"></i>
+                </button>
+                <!-- <button class="btn btn-circle bg-blueClr border-blueClr hover:bg-blueClr/80 h-8 w-8">
+                    <i data-lucide="sun-medium" class="h-4 w-4 text-white"></i>
+                </button> -->
+                <a href="#" class="shrink-0 hover:opacity-80">
+                    <img src="./images/default-avatar.jpeg" class="w-9 h-9 rounded-full" alt="">
+                </a>
+                <button
+                    class="md:inline-flex hidden btn bg-gradient-to-tr from-redClr via-redClr/80 to-blueClr text-white border-none rounded-lg hover:opacity-80">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    Subscribe
+                </button>
+                <div class="md:hidden drawer drawer-end w-fit">
+                    <input id="my-drawer-5" type="checkbox" class="drawer-toggle" />
+                    <div class="drawer-content w-fit">
+                        <label for="my-drawer-5"
+                            class="h-8 w-8 drawer-button btn btn-square bg-redClr hover:bg-redClr/80 border-redClr rounded-lg">
+                            <i data-lucide="menu" class="w-4 h-4"></i>
+                        </label>
+                    </div>
+                    <div class="drawer-side">
+                        <label for="my-drawer-5" aria-label="close sidebar" class="drawer-overlay"></label>
+                        <ul class="menu bg-base-200 min-h-full w-80 p-4">
+                            <li><a>Sidebar Item 1</a></li>
+                            <li><a>Sidebar Item 2</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="md:block hidden overflow-x-auto hideScrollbar border-b border-neutral-300">
+            <div class="flex justify-between gap-4 sm:px-6 px-4 py-2">
+                <a href="#"
+                    class="text-lg font-medium text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full after:!w-full">
+                    Home
+                </a>
+                <a href="#"
+                    class="text-lg font-medium text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
+                    Lorem, ipsum.
+                </a>
+                <a href="#"
+                    class="text-lg font-medium text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
+                    Lorem, ipsum.
+                </a>
+                <a href="#"
+                    class="text-lg font-medium text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
+                    Lorem, ipsum.
+                </a>
+                <a href="#"
+                    class="text-lg font-medium text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
+                    Lorem, ipsum.
+                </a>
+                <a href="#"
+                    class="text-lg font-medium text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
+                    Lorem, ipsum.
+                </a>
+                <a href="#"
+                    class="text-lg font-medium text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
+                    Lorem, ipsum.
+                </a>
+                <a href="#"
+                    class="text-lg font-medium text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
+                    Lorem, ipsum.
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="min-h-[200vh] md:mt-[134px] mt-[74px]">
+        <div class="flex">
+            <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">BREAKING</p>
+            <div class="flex-1 bg-blackClr">
+            </div>
+        </div>
+
+        <section class="md:p-6 p-4">
+            <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 md:gap-6 sm:gap-4 gap-2">
+                <div class="grid divide-y divide-neutral-300 h-fit md:order-1 order-3">
+                    <div class="flex md:flex-col flex-row items-center md:p-2 gap-2">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full md:max-h-[220px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                            alt="">
+                        <p class="sm:text-2xl text-xl leading-5 fontBaskerville font-semibold line-clamp-3">
+                            Lorem ipsum
+                            dolor sit amet consectetur
+                            adipisicing elit.</p>
+                    </div>
+                    <div class="flex md:flex-col flex-row items-center md:p-2 gap-2">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full md:max-h-[220px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                            alt="">
+                        <p class="sm:text-2xl text-xl leading-5 fontBaskerville font-semibold line-clamp-3">
+                            Lorem ipsum
+                            dolor sit amet consectetur
+                            adipisicing elit.</p>
+                    </div>
+                    <div class="flex md:flex-col flex-row items-center md:p-2 gap-2">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full md:max-h-[220px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                            alt="">
+                        <p class="sm:text-2xl text-xl leading-5 fontBaskerville font-semibold line-clamp-3">
+                            Lorem ipsum
+                            dolor sit amet consectetur
+                            adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="md:col-span-2 divide-y divide-neutral-300 md:order-2 order-1">
+                    <div>
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="w-full sm:max-h-[400px] max-h-[240px] object-cover" alt="">
+                        <div class="p-2 space-y-2">
+                            <p class="sm:text-4xl text-3xl fontBaskerville font-semibold line-clamp-3">Lorem ipsum,
+                                dolor sit amet
+                                consectetur adipisicing elit. Saepe, quis?</p>
+                            <p class="text-neutral-700">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                Mollitia, voluptate vero
+                                provident ab sapiente tempora.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-xl leading-6 gap-4 p-2">
+                        <p class="flex-1 fontBaskerville font-semibold line-clamp-3">Lorem ipsum dolor sit amet
+                            consectetur
+                            adipisicing elit. Quibusdam porro in!</p>
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="max-w-[120px] object-cover" alt="">
+                    </div>
+                    <div class="flex items-center text-xl leading-6 gap-4 p-2">
+                        <p class="flex-1 fontBaskerville font-semibold line-clamp-3">Lorem ipsum dolor sit amet
+                            consectetur
+                            adipisicing elit. Quibusdam porro in!</p>
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="max-w-[120px] object-cover" alt="">
+                    </div>
+                    <div class="flex items-center text-xl leading-6 gap-4 p-2">
+                        <p class="flex-1 fontBaskerville font-semibold line-clamp-3">Lorem ipsum dolor sit amet
+                            consectetur
+                            adipisicing elit. Quibusdam porro in!</p>
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="max-w-[120px] object-cover" alt="">
+                    </div>
+                </div>
+                <div class="lg:col-span-1 md:col-span-3 md:order-3 order-2">
+                    <p class="p-1 mb-2 bg-redClr text-white font-semibold">LATEST ARTICLES</p>
+                    <div class="flex lg:flex-col sm:flex-row flex-col lg:gap-0 md:gap-4 gap-2">
+                        <div>
+                            <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                                class="w-full max-h-[200px] object-cover" alt="">
+                            <p class="p-2 text-2xl fontBaskerville font-semibold">Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit.</p>
+                        </div>
+                        <div class="divide-y divide-neutral-300 ">
+                            <div class="flex gap-2 items-center py-2">
+                                <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                                    class="max-h-[80px] aspect-square object-cover" alt="">
+                                <p class="flex-1 text-xl fontBaskerville font-semibold">Lorem ipsum dolor sit amet
+                                    consectetur
+                                    adipisicing elit.</p>
+                            </div>
+                            <div class="flex gap-2 items-center py-2">
+                                <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                                    class="max-h-[80px] aspect-square object-cover" alt="">
+                                <p class="flex-1 text-xl fontBaskerville font-semibold">Lorem ipsum dolor sit amet
+                                    consectetur
+                                    adipisicing elit.</p>
+                            </div>
+                            <div class="flex gap-2 items-center py-2">
+                                <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                                    class="max-h-[80px] aspect-square object-cover" alt="">
+                                <p class="flex-1 text-xl fontBaskerville font-semibold">Lorem ipsum dolor sit amet
+                                    consectetur
+                                    adipisicing elit.</p>
+                            </div>
+                            <div class="flex gap-2 items-center py-2">
+                                <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                                    class="max-h-[80px] aspect-square object-cover" alt="">
+                                <p class="flex-1 text-xl fontBaskerville font-semibold">Lorem ipsum dolor sit amet
+                                    consectetur
+                                    adipisicing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="md:p-6 p-4">
+            <div class="flex mb-2">
+                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">ODISHA LATEST</p>
+                <div class="flex-1 bg-blackClr">
+                </div>
+                <p class="md:inline-block hidden max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">
+                    ODISHA LATEST</p>
+            </div>
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
+                <div>
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="w-full max-h-[200px] object-cover" alt="">
+                    <p class="p-2 text-2xl leading-6 fontBaskerville font-semibold line-clamp-3">Lorem ipsum dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex md:flex-col flex-row items-center">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                        dolor sit amet
+                        consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex md:flex-col flex-row items-center">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                        dolor sit amet
+                        consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex md:flex-col flex-row items-center">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                        dolor sit amet
+                        consectetur
+                        adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <a href="#" class="btn bg-redClr border-redClr hover:bg-redClr/80 text-white rounded-lg">View all <i
+                        data-lucide="chevron-right" class="inline w-5 h-5"></i></a>
+            </div>
+        </section>
+        <section class="md:p-6 p-4">
+            <div class="flex mb-2">
+                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">STATE</p>
+                <div class="flex-1 bg-blackClr">
+                </div>
+                <p class="md:inline-block hidden max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">
+                    STATE</p>
+            </div>
+            <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
+                <div>
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="w-full max-h-[400px] object-cover" alt="">
+                    <p class="p-2 text-3xl fontBaskerville font-semibold line-clamp-3">Lorem ipsum dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+                    <div class="flex md:flex-col flex-row">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                            alt="">
+                        <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem
+                            ipsum
+                            dolor sit amet
+                            consectetur
+                            adipisicing elit.</p>
+                    </div>
+                    <div class="flex md:flex-col flex-row">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                            alt="">
+                        <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem
+                            ipsum
+                            dolor sit amet
+                            consectetur
+                            adipisicing elit.</p>
+                    </div>
+                    <div class="flex md:flex-col flex-row">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                            alt="">
+                        <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem
+                            ipsum
+                            dolor sit amet
+                            consectetur
+                            adipisicing elit.</p>
+                    </div>
+                    <div class="flex md:flex-col flex-row">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                            alt="">
+                        <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem
+                            ipsum
+                            dolor sit amet
+                            consectetur
+                            adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <a href="#" class="btn bg-redClr border-redClr hover:bg-redClr/80 text-white rounded-lg">View all <i
+                        data-lucide="chevron-right" class="inline w-5 h-5"></i></a>
+            </div>
+        </section>
+        <section class="md:p-6 p-4">
+            <div class="bg-bgClr p-6 rounded-xl max-w-7xl mx-auto">
+                <p class="text-2xl font-semibold fontBaskerville mb-4">Web Stories</p>
+
+                <div class="story-feed" id="storyFeed"></div>
+                <!-- Story Overlay -->
+                <div class="story-overlay" id="storyOverlay">
+                    <div class="story-container">
+                        <button class="close-story" id="closeStory">✕</button>
+                        <div class="story-progress"></div>
+                        <div class="swiper story-swiper">
+                            <div class="swiper-wrapper" id="storySlides"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="md:p-6 p-4">
+            <div class="flex mb-2">
+                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">STATE</p>
+                <div class="flex-1 bg-blackClr">
+                </div>
+                <p class="md:inline-block hidden max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">
+                    STATE</p>
+            </div>
+            <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
+                <div>
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="w-full max-h-[400px] object-cover" alt="">
+                    <p class="p-2 text-3xl fontBaskerville font-semibold line-clamp-3">Lorem ipsum dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+                    <div class="flex md:flex-col flex-row items-center">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                            alt="">
+                        <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem
+                            ipsum
+                            dolor sit amet
+                            consectetur
+                            adipisicing elit.</p>
+                    </div>
+                    <div class="flex md:flex-col flex-row items-center">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                            alt="">
+                        <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem
+                            ipsum
+                            dolor sit amet
+                            consectetur
+                            adipisicing elit.</p>
+                    </div>
+                    <div class="flex md:flex-col flex-row items-center">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                            alt="">
+                        <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem
+                            ipsum
+                            dolor sit amet
+                            consectetur
+                            adipisicing elit.</p>
+                    </div>
+                    <div class="flex md:flex-col flex-row items-center">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                            alt="">
+                        <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem
+                            ipsum
+                            dolor sit amet
+                            consectetur
+                            adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <a href="#" class="btn bg-redClr border-redClr hover:bg-redClr/80 text-white rounded-lg">View all <i
+                        data-lucide="chevron-right" class="inline w-5 h-5"></i></a>
+            </div>
+        </section>
+        <section class="md:p-6 p-4">
+            <div class="flex mb-2">
+                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">ODISHA LATEST</p>
+                <div class="flex-1 bg-blackClr">
+                </div>
+                <p class="md:inline-block hidden max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">
+                    ODISHA LATEST</p>
+            </div>
+            <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
+                <div>
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="w-full max-h-[280px] object-cover" alt="">
+                    <p class="p-2 text-2xl leading-6 fontBaskerville font-semibold line-clamp-3">Lorem ipsum dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex md:flex-col flex-row items-center">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="md:max-w-full max-w-[80px] md:max-h-[280px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                        dolor sit amet
+                        consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex md:flex-col flex-row items-center">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="md:max-w-full max-w-[80px] md:max-h-[280px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                        dolor sit amet
+                        consectetur
+                        adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <a href="#" class="btn bg-redClr border-redClr hover:bg-redClr/80 text-white rounded-lg">View all <i
+                        data-lucide="chevron-right" class="inline w-5 h-5"></i></a>
+            </div>
+        </section>
+        <section class="md:p-6 p-4">
+            <div class="flex mb-2">
+                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">INDIA</p>
+                <div class="flex-1 bg-blackClr">
+                </div>
+                <p class="md:inline-block hidden max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">
+                    INDIA</p>
+            </div>
+            <div class="grid md:grid-cols-3 grid-cols-1 gap-4 md:border-b border-neutral-300">
+                <div>
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="w-full max-h-[280px] object-cover" alt="">
+                    <p class="p-2 text-2xl leading-6 fontBaskerville font-semibold line-clamp-3">Lorem ipsum dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex items-center gap-2 md:flex-col flex-row">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="md:max-w-full max-w-[80px] md:max-h-[280px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                        dolor sit amet
+                        consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex items-center gap-2 md:flex-col flex-row">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="md:max-w-full max-w-[80px] md:max-h-[280px] max-h-[80px] md:aspect-video aspect-square object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                        dolor sit amet
+                        consectetur
+                        adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 grid-cols-1 gap-4 mt-2">
+                <div class="flex items-center gap-2">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="max-h-[80px] aspect-square object-cover" alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-6 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                        dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="max-h-[80px] aspect-square object-cover" alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-6 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                        dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="max-h-[80px] aspect-square object-cover" alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-6 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                        dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <a href="#" class="btn bg-redClr border-redClr hover:bg-redClr/80 text-white rounded-lg">View all <i
+                        data-lucide="chevron-right" class="inline w-5 h-5"></i></a>
+            </div>
+        </section>
+    </main>
+    <footer class="py-6 bg-blackClr">
+        <div class="max-w-7xl mx-auto px-6 mx-auto divide-y divide-gray-400 divide-opacity-50">
+            <div class="grid md:grid-cols-4 grid-cols-2 gap-4 pb-6">
+                <div class="col-span-2">
+                    <a rel="noopener noreferrer" href="#" class="flex justify-center space-x-3 md:justify-start">
+                        <img src="./images/logo.png" class="max-w-60" alt="Orrisa Mirror Logo">
+                    </a>
+                </div>
+                <div class="text-center md:text-left">
+                    <p class="pb-1 text-lg font-medium text-white">QUICK LINKS</p>
+                    <ul class="text-gray-100 space-y-2">
+                        <li>
+                            <a rel="noopener noreferrer" href="#" class="hover:text-blueClr">Link</a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer" href="#" class="hover:text-blueClr">Link</a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer" href="#" class="hover:text-blueClr">Link</a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer" href="#" class="hover:text-blueClr">Link</a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer" href="#" class="hover:text-blueClr">Link</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <p class="pb-1 text-lg font-medium text-white">QUICK LINKS</p>
+                    <ul class="text-gray-100 space-y-2">
+                        <li>
+                            <a rel="noopener noreferrer" href="#" class="hover:text-blueClr">Link</a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer" href="#" class="hover:text-blueClr">Link</a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer" href="#" class="hover:text-blueClr">Link</a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer" href="#" class="hover:text-blueClr">Link</a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer" href="#" class="hover:text-blueClr">Link</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid justify-center pt-6 lg:justify-between">
+                <div
+                    class="flex flex-col self-center text-gray-200 text-sm text-center md:block lg:col-start-1 md:space-x-6">
+                    <span>©2025 All rights reserved</span>
+                </div>
+                <div class="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
+                    <a rel="noopener noreferrer" href="#" title="Facebook"
+                        class="flex items-center justify-center w-10 h-10 rounded-full bg-redClr text-gray-900">
+                        <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
+                    </a>
+                    <a rel="noopener noreferrer" href="#" title="Instagram"
+                        class="flex items-center justify-center w-10 h-10 rounded-full bg-redClr text-gray-900">
+                        <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
+                    </a>
+                    <a rel="noopener noreferrer" href="#" title="Linkedin"
+                        class="flex items-center justify-center w-10 h-10 rounded-full bg-redClr text-gray-900">
+                        <i data-lucide="linkedin" class="w-5 h-5 text-white"></i>
+                    </a>
+                    <a rel="noopener noreferrer" href="#" title="X"
+                        class="flex items-center justify-center w-10 h-10 rounded-full bg-redClr text-gray-900">
+                        <svg aria-label="X logo" width="16" height="12" viewBox="0 0 300 271"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill="white"
+                                d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        lucide.createIcons();
+
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById("navbar"); // replace with your navbar class
+
+        window.addEventListener("scroll", () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY) {
+                // scrolling down → hide navbar
+                navbar.style.transform = "translateY(-100%)";
+            } else {
+                // scrolling up → show navbar
+                navbar.style.transform = "translateY(0)";
+            }
+
+            lastScrollY = currentScrollY;
+        });
+
+        // ================ Open story ================ //
+
+        const storyData = [
+            {
+                id: 1,
+                user: "Saqlain",
+                thumbnail: "https://picsum.photos/id/1015/200/200",
+                stories: [
+                    "https://picsum.photos/id/1015/350/600",
+                    "https://picsum.photos/id/1016/350/600",
+                    "https://picsum.photos/id/1018/350/600",
+                ],
+            },
+            {
+                id: 2,
+                user: "John",
+                thumbnail: "https://picsum.photos/id/1020/200/200",
+                stories: [
+                    "https://picsum.photos/id/1020/350/600",
+                    "https://picsum.photos/id/1021/350/600",
+                ],
+            },
+            {
+                id: 3,
+                user: "Emma",
+                thumbnail: "https://picsum.photos/id/1030/200/200",
+                stories: [
+                    "https://picsum.photos/id/1030/350/600",
+                    "https://picsum.photos/id/1031/350/600",
+                    "https://picsum.photos/id/1032/350/600",
+                    "https://picsum.photos/id/1033/350/600",
+                ],
+            },
+        ];
+
+        const storyFeed = document.getElementById("storyFeed");
+        const overlay = document.getElementById("storyOverlay");
+        const storySlides = document.getElementById("storySlides");
+        const progressContainer = document.querySelector(".story-progress");
+        const closeBtn = document.getElementById("closeStory");
+
+        let swiper;
+
+        function disableScroll() {
+            document.body.style.overflow = 'hidden';
+        }
+
+        function enableScroll() {
+            document.body.style.overflow = '';
+        }
+
+        // === Generate Thumbnails ===
+        storyData.forEach((story) => {
+            const thumb = document.createElement("div");
+            thumb.classList.add("story-thumbnail");
+            thumb.innerHTML = `<img src="${story.thumbnail}" alt="${story.user}" title="${story.user}" />
+                                <p>${story.user}</p>`;
+            thumb.addEventListener("click", () => openStory(story));
+            storyFeed.appendChild(thumb);
+        });
+
+        // === Open Story ===
+        function openStory(story) {
+            overlay.classList.add("active");
+            disableScroll();
+
+            // Build slides dynamically
+            storySlides.innerHTML = "";
+            story.stories.forEach((url) => {
+                const slide = document.createElement("div");
+                slide.classList.add("swiper-slide");
+                slide.innerHTML = `<img src="${url}" alt="story image" />`;
+                storySlides.appendChild(slide);
+            });
+
+            // Setup progress bars
+            setupProgressBars(story.stories.length);
+
+            let closeTimeout;
+
+            swiper = new Swiper(".story-swiper", {
+                slidesPerView: 1,
+                allowTouchMove: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                on: {
+                    init: function () {
+                        startProgress(this.activeIndex);
+                    },
+                    slideChange: function () {
+                        startProgress(this.activeIndex);
+
+                        // Cancel any scheduled close when user moves manually
+                        if (closeTimeout) {
+                            clearTimeout(closeTimeout);
+                            closeTimeout = null;
+                        }
+                    },
+                    autoplayTimeLeft: function (s, time, progress) {
+                        // This callback runs continuously while autoplay runs
+                        const isLast = s.activeIndex === s.slides.length - 1;
+                        if (isLast && time <= 50) { // wait until autoplay is nearly done
+                            overlay.classList.remove("active");
+                            enableScroll();
+                            swiper.destroy(true, true);
+                        }
+                    },
+                },
+            });
+        }
+
+        // === Progress bar functions ===
+        function setupProgressBars(total) {
+            progressContainer.innerHTML = "";
+            for (let i = 0; i < total; i++) {
+                const bar = document.createElement("div");
+                bar.classList.add("story-progress-bar");
+                bar.innerHTML = `<div class="story-progress-bar-fill"></div>`;
+                progressContainer.appendChild(bar);
+            }
+        }
+
+        function startProgress(index) {
+            const fills = document.querySelectorAll(".story-progress-bar-fill");
+            if (!fills[index]) return;
+
+            fills.forEach((fill, i) => {
+                fill.style.transition = "none";
+                fill.style.width = i < index ? "100%" : "0%";
+            });
+
+            const current = fills[index];
+            setTimeout(() => {
+                current.style.transition = "width 4s linear";
+                current.style.width = "100%";
+            }, 50);
+        }
+
+        // === Close story ===
+        closeBtn.addEventListener("click", () => {
+            overlay.classList.remove("active");
+            enableScroll();
+            if (swiper) swiper.destroy(true, true);
+        });
+
+        // === Tap navigation ===
+        overlay.addEventListener("click", (e) => {
+            if (!swiper) return;
+            const container = document.querySelector(".story-container");
+            if (e.target.closest(".close-story")) return;
+            if (e.clientX < container.offsetWidth / 2) swiper.slidePrev();
+            else swiper.slideNext();
+        });
+
+        // === Pause on hold ===
+        document.addEventListener("mousedown", (e) => {
+            if (overlay.classList.contains("active") && swiper) swiper.autoplay.stop();
+        });
+        document.addEventListener("mouseup", (e) => {
+            if (overlay.classList.contains("active") && swiper) swiper.autoplay.start();
+        });
+        document.addEventListener("touchstart", (e) => {
+            if (overlay.classList.contains("active") && swiper) swiper.autoplay.stop();
+        });
+        document.addEventListener("touchend", (e) => {
+            if (overlay.classList.contains("active") && swiper) swiper.autoplay.start();
+        });
+    </script>
+
+</body>
+
+</html>
