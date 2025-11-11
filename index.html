@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <style type="text/tailwindcss">
         @theme {
-            --color-redClr: #ED3500; 
-            --color-blueClr: #093FB4; 
+            --color-redClr: #ED3500;
+            --color-blueClr: #093FB4;
             --color-bgClr: #FFD8D8;
             --color-blackClr: #222831;
         }
@@ -21,32 +21,88 @@
 </head>
 
 <body>
-    <header id="navbar" class="shadow-sm bg-white fixed z-50 top-0 left-0 right-0 duration-300">
-        <div class="grid md:grid-cols-3 grid-cols-2 items-center gap-2 sm:px-6 px-4 py-4 border-b border-neutral-300">
-            <div class="md:flex hidden items-center gap-2">
-                <a href="#" class="bg-redClr hover:bg-redClr/80 h-8 w-8 flex justify-center items-center rounded-full">
-                    <i data-lucide="facebook" class="w-4 h-4 text-white"></i>
-                </a>
-                <a href="#" class="bg-redClr hover:bg-redClr/80 h-8 w-8 flex justify-center items-center rounded-full">
-                    <i data-lucide="instagram" class="w-4 h-4 text-white"></i>
-                </a>
-                <a href="#" class="bg-redClr hover:bg-redClr/80 h-8 w-8 flex justify-center items-center rounded-full">
-                    <i data-lucide="linkedin" class="w-4 h-4 text-white"></i>
-                </a>
-                <a href="#" class="bg-redClr hover:bg-redClr/80 h-8 w-8 flex justify-center items-center rounded-full">
-                    <svg aria-label="X logo" width="16" height="12" viewBox="0 0 300 271"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill="white"
-                            d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z" />
-                    </svg>
-                </a>
+    <header id="navbar" class="max-w-[1480px] mx-auto bg-white fixed z-50 top-0 left-0 right-0 duration-300">
+        <div class="grid grid-cols-3 items-center gap-2 sm:px-6 px-4 py-4 border-b border-neutral-300">
+            <div class="drawer w-fit">
+                <input id="my-drawer-5" type="checkbox" class="drawer-toggle" />
+                <div class="drawer-content w-fit">
+                    <label for="my-drawer-5"
+                        class="h-8 w-8 drawer-button btn btn-square bg-transparent hover:bg-gray-200 border-none rounded-lg">
+                        <img src="./svgs/hamburger-menu.svg" alt="">
+                    </label>
+                </div>
+                <div class="drawer-side">
+                    <label for="my-drawer-5" aria-label="close sidebar" class="drawer-overlay"></label>
+                    <div class="menu bg-base-100 h-full min-h-[640px] sm:w-96 w-80 p-4 pt-10 relative">
+                        <ul class="border-b border-gray-300 pb-4">
+                            <li><a class="fontNoto text-lg">HOME</a></li>
+                            <li><a class="fontNoto text-lg">EXAMPLE</a></li>
+                            <li><a class="fontNoto text-lg">EXAMPLE</a></li>
+                            <li><a class="fontNoto text-lg">EXAMPLE</a></li>
+                            <li><a class="fontNoto text-lg">EXAMPLE</a></li>
+                            <li><a class="fontNoto text-lg">EXAMPLE</a></li>
+                            <li><a class="fontNoto text-lg">EXAMPLE</a></li>
+                        </ul>
+                        <div class="p-4">
+                            <a href="#" class="flex items-center gap-1"><i data-lucide="dot"
+                                    class="size-6 stroke-3 text-redClr"></i> Authors</a>
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full sm:p-8 p-4 bg-base-300 space-y-2">
+                            <div class="flex items-center gap-2">
+                                <a href="#"
+                                    class="bg-redClr hover:bg-redClr/80 h-7 w-7 flex justify-center items-center rounded-full">
+                                    <i data-lucide="facebook" class="w-4 h-4 text-white"></i>
+                                </a>
+                                <a href="#"
+                                    class="bg-redClr hover:bg-redClr/80 h-7 w-7 flex justify-center items-center rounded-full">
+                                    <i data-lucide="instagram" class="w-4 h-4 text-white"></i>
+                                </a>
+                                <a href="#"
+                                    class="bg-redClr hover:bg-redClr/80 h-7 w-7 flex justify-center items-center rounded-full">
+                                    <i data-lucide="linkedin" class="w-4 h-4 text-white"></i>
+                                </a>
+                                <a href="#"
+                                    class="bg-redClr hover:bg-redClr/80 h-7 w-7 flex justify-center items-center rounded-full">
+                                    <svg aria-label="X logo" width="16" height="12" viewBox="0 0 300 271"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill="white"
+                                            d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <p>powered by: <span class="fontNoto font-semibold">Orissa Mirror</span></p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="flex md:justify-center">
-                <img src="./images/logo.png" class="md:max-w-44 max-w-32" alt="Orissa Mirror Logo">
+                <img src="./images/logo.png" class="md:max-w-44 max-w-full" alt="Orissa Mirror Logo">
             </div>
             <div class="flex justify-end items-center gap-2">
-                <button class="btn btn-circle bg-blueClr border-blueClr hover:bg-blueClr/80 h-8 w-8">
-                    <i data-lucide="search" class="h-4 w-4 text-white"></i>
+                <div class="md:flex hidden items-center gap-2">
+                    <a href="#"
+                        class="bg-redClr hover:bg-redClr/80 h-7 w-7 flex justify-center items-center rounded-full">
+                        <i data-lucide="facebook" class="w-4 h-4 text-white"></i>
+                    </a>
+                    <a href="#"
+                        class="bg-redClr hover:bg-redClr/80 h-7 w-7 flex justify-center items-center rounded-full">
+                        <i data-lucide="instagram" class="w-4 h-4 text-white"></i>
+                    </a>
+                    <a href="#"
+                        class="bg-redClr hover:bg-redClr/80 h-7 w-7 flex justify-center items-center rounded-full">
+                        <i data-lucide="linkedin" class="w-4 h-4 text-white"></i>
+                    </a>
+                    <a href="#"
+                        class="bg-redClr hover:bg-redClr/80 h-7 w-7 flex justify-center items-center rounded-full">
+                        <svg aria-label="X logo" width="16" height="12" viewBox="0 0 300 271"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill="white"
+                                d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z" />
+                        </svg>
+                    </a>
+                </div>
+                <button class="btn btn-circle bg-transparent border-none hover:bg-gray-200 h-8 w-8">
+                    <i data-lucide="search" class="h-4 w-4 text-black"></i>
                 </button>
                 <!-- <button class="btn btn-circle bg-blueClr border-blueClr hover:bg-blueClr/80 h-8 w-8">
                     <i data-lucide="sun-medium" class="h-4 w-4 text-white"></i>
@@ -55,67 +111,51 @@
                     <img src="./images/default-avatar.jpeg" class="w-9 h-9 rounded-full" alt="">
                 </a>
                 <button
-                    class="md:inline-flex hidden btn bg-gradient-to-tr from-redClr via-redClr/80 to-blueClr text-white border-none rounded-lg hover:opacity-80">
+                    class="md:inline-flex hidden btn bg-redClr h-9 px-3 text-white border-none rounded-lg hover:opacity-80">
                     <i data-lucide="mail" class="w-4 h-4"></i>
                     Subscribe
                 </button>
-                <div class="md:hidden drawer drawer-end w-fit">
-                    <input id="my-drawer-5" type="checkbox" class="drawer-toggle" />
-                    <div class="drawer-content w-fit">
-                        <label for="my-drawer-5"
-                            class="h-8 w-8 drawer-button btn btn-square bg-redClr hover:bg-redClr/80 border-redClr rounded-lg">
-                            <i data-lucide="menu" class="w-4 h-4"></i>
-                        </label>
-                    </div>
-                    <div class="drawer-side">
-                        <label for="my-drawer-5" aria-label="close sidebar" class="drawer-overlay"></label>
-                        <ul class="menu bg-base-200 min-h-full w-80 p-4">
-                            <li><a>Sidebar Item 1</a></li>
-                            <li><a>Sidebar Item 2</a></li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="md:block hidden overflow-x-auto hideScrollbar border-b border-neutral-300">
             <div class="flex justify-between gap-4 sm:px-6 px-4 py-2">
                 <a href="#"
-                    class="text-lg font-medium text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full after:!w-full">
+                    class="text-lg font-semibold uppercase text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full after:!w-full">
                     Home
                 </a>
                 <a href="#"
-                    class="text-lg font-medium text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
+                    class="text-lg font-semibold uppercase text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
                     Lorem, ipsum.
                 </a>
                 <a href="#"
-                    class="text-lg font-medium text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
+                    class="text-lg font-semibold uppercase text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
                     Lorem, ipsum.
                 </a>
                 <a href="#"
-                    class="text-lg font-medium text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
+                    class="text-lg font-semibold uppercase text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
                     Lorem, ipsum.
                 </a>
                 <a href="#"
-                    class="text-lg font-medium text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
+                    class="text-lg font-semibold uppercase text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
                     Lorem, ipsum.
                 </a>
                 <a href="#"
-                    class="text-lg font-medium text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
+                    class="text-lg font-semibold uppercase text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
                     Lorem, ipsum.
                 </a>
                 <a href="#"
-                    class="text-lg font-medium text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
+                    class="text-lg font-semibold uppercase text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
                     Lorem, ipsum.
                 </a>
                 <a href="#"
-                    class="text-lg font-medium text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
+                    class="text-lg font-semibold uppercase text-nowrap relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-redClr after:transition-all after:duration-300 hover:after:w-full">
                     Lorem, ipsum.
                 </a>
             </div>
         </div>
     </header>
-    <main class="min-h-[200vh] md:mt-[134px] mt-[74px]">
-        <div class="flex">
+    <main class="max-w-[1480px] mx-auto md:mt-[134px] mt-[74px]">
+        <div class="flex md:px-6 px-4 pt-2">
             <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">BREAKING</p>
             <div class="flex-1 bg-blackClr">
             </div>
@@ -128,7 +168,7 @@
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                             class="md:max-w-full md:max-h-[220px] max-h-[80px] md:aspect-video aspect-square object-cover"
                             alt="">
-                        <p class="sm:text-2xl text-xl leading-5 fontBaskerville font-semibold line-clamp-3">
+                        <p class="sm:text-2xl text-xl leading-5 fontNoto line-clamp-3">
                             Lorem ipsum
                             dolor sit amet consectetur
                             adipisicing elit.</p>
@@ -137,7 +177,7 @@
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                             class="md:max-w-full md:max-h-[220px] max-h-[80px] md:aspect-video aspect-square object-cover"
                             alt="">
-                        <p class="sm:text-2xl text-xl leading-5 fontBaskerville font-semibold line-clamp-3">
+                        <p class="sm:text-2xl text-xl leading-5 fontNoto line-clamp-3">
                             Lorem ipsum
                             dolor sit amet consectetur
                             adipisicing elit.</p>
@@ -146,7 +186,7 @@
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                             class="md:max-w-full md:max-h-[220px] max-h-[80px] md:aspect-video aspect-square object-cover"
                             alt="">
-                        <p class="sm:text-2xl text-xl leading-5 fontBaskerville font-semibold line-clamp-3">
+                        <p class="sm:text-2xl text-xl leading-5 fontNoto line-clamp-3">
                             Lorem ipsum
                             dolor sit amet consectetur
                             adipisicing elit.</p>
@@ -157,7 +197,7 @@
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                             class="w-full sm:max-h-[400px] max-h-[240px] object-cover" alt="">
                         <div class="p-2 space-y-2">
-                            <p class="sm:text-4xl text-3xl fontBaskerville font-semibold line-clamp-3">Lorem ipsum,
+                            <p class="sm:text-4xl text-3xl fontNoto line-clamp-3">Lorem ipsum,
                                 dolor sit amet
                                 consectetur adipisicing elit. Saepe, quis?</p>
                             <p class="text-neutral-700">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -166,21 +206,21 @@
                         </div>
                     </div>
                     <div class="flex items-center text-xl leading-6 gap-4 p-2">
-                        <p class="flex-1 fontBaskerville font-semibold line-clamp-3">Lorem ipsum dolor sit amet
+                        <p class="flex-1 fontNoto line-clamp-3">Lorem ipsum dolor sit amet
                             consectetur
                             adipisicing elit. Quibusdam porro in!</p>
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                             class="max-w-[120px] object-cover" alt="">
                     </div>
                     <div class="flex items-center text-xl leading-6 gap-4 p-2">
-                        <p class="flex-1 fontBaskerville font-semibold line-clamp-3">Lorem ipsum dolor sit amet
+                        <p class="flex-1 fontNoto line-clamp-3">Lorem ipsum dolor sit amet
                             consectetur
                             adipisicing elit. Quibusdam porro in!</p>
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                             class="max-w-[120px] object-cover" alt="">
                     </div>
                     <div class="flex items-center text-xl leading-6 gap-4 p-2">
-                        <p class="flex-1 fontBaskerville font-semibold line-clamp-3">Lorem ipsum dolor sit amet
+                        <p class="flex-1 fontNoto line-clamp-3">Lorem ipsum dolor sit amet
                             consectetur
                             adipisicing elit. Quibusdam porro in!</p>
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
@@ -193,35 +233,35 @@
                         <div>
                             <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                                 class="w-full max-h-[200px] object-cover" alt="">
-                            <p class="p-2 text-2xl fontBaskerville font-semibold">Lorem ipsum dolor sit amet consectetur
+                            <p class="p-2 text-2xl fontNoto">Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit.</p>
                         </div>
                         <div class="divide-y divide-neutral-300 ">
                             <div class="flex gap-2 items-center py-2">
                                 <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                                     class="max-h-[80px] aspect-square object-cover" alt="">
-                                <p class="flex-1 text-xl fontBaskerville font-semibold">Lorem ipsum dolor sit amet
+                                <p class="flex-1 text-xl fontNoto">Lorem ipsum dolor sit amet
                                     consectetur
                                     adipisicing elit.</p>
                             </div>
                             <div class="flex gap-2 items-center py-2">
                                 <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                                     class="max-h-[80px] aspect-square object-cover" alt="">
-                                <p class="flex-1 text-xl fontBaskerville font-semibold">Lorem ipsum dolor sit amet
+                                <p class="flex-1 text-xl fontNoto">Lorem ipsum dolor sit amet
                                     consectetur
                                     adipisicing elit.</p>
                             </div>
                             <div class="flex gap-2 items-center py-2">
                                 <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                                     class="max-h-[80px] aspect-square object-cover" alt="">
-                                <p class="flex-1 text-xl fontBaskerville font-semibold">Lorem ipsum dolor sit amet
+                                <p class="flex-1 text-xl fontNoto">Lorem ipsum dolor sit amet
                                     consectetur
                                     adipisicing elit.</p>
                             </div>
                             <div class="flex gap-2 items-center py-2">
                                 <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                                     class="max-h-[80px] aspect-square object-cover" alt="">
-                                <p class="flex-1 text-xl fontBaskerville font-semibold">Lorem ipsum dolor sit amet
+                                <p class="flex-1 text-xl fontNoto">Lorem ipsum dolor sit amet
                                     consectetur
                                     adipisicing elit.</p>
                             </div>
@@ -242,7 +282,7 @@
                 <div>
                     <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                         class="w-full max-h-[200px] object-cover" alt="">
-                    <p class="p-2 text-2xl leading-6 fontBaskerville font-semibold line-clamp-3">Lorem ipsum dolor sit
+                    <p class="p-2 text-2xl leading-6 fontNoto line-clamp-3">Lorem ipsum dolor sit
                         amet consectetur
                         adipisicing elit.</p>
                 </div>
@@ -250,7 +290,7 @@
                     <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                         class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
                         alt="">
-                    <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                    <p class="p-2 md:text-2xl text-lg leading-5 fontNoto line-clamp-3">Lorem ipsum
                         dolor sit amet
                         consectetur
                         adipisicing elit.</p>
@@ -259,7 +299,7 @@
                     <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                         class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
                         alt="">
-                    <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                    <p class="p-2 md:text-2xl text-lg leading-5 fontNoto line-clamp-3">Lorem ipsum
                         dolor sit amet
                         consectetur
                         adipisicing elit.</p>
@@ -268,7 +308,7 @@
                     <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                         class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
                         alt="">
-                    <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                    <p class="p-2 md:text-2xl text-lg leading-5 fontNoto line-clamp-3">Lorem ipsum
                         dolor sit amet
                         consectetur
                         adipisicing elit.</p>
@@ -291,7 +331,7 @@
                 <div>
                     <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                         class="w-full max-h-[400px] object-cover" alt="">
-                    <p class="p-2 text-3xl fontBaskerville font-semibold line-clamp-3">Lorem ipsum dolor sit
+                    <p class="p-2 text-3xl fontNoto line-clamp-3">Lorem ipsum dolor sit
                         amet consectetur
                         adipisicing elit.</p>
                 </div>
@@ -300,7 +340,7 @@
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                             class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
                             alt="">
-                        <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem
+                        <p class="p-2 md:text-2xl text-lg leading-5 fontNoto line-clamp-3">Lorem
                             ipsum
                             dolor sit amet
                             consectetur
@@ -310,7 +350,7 @@
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                             class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
                             alt="">
-                        <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem
+                        <p class="p-2 md:text-2xl text-lg leading-5 fontNoto line-clamp-3">Lorem
                             ipsum
                             dolor sit amet
                             consectetur
@@ -320,7 +360,7 @@
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                             class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
                             alt="">
-                        <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem
+                        <p class="p-2 md:text-2xl text-lg leading-5 fontNoto line-clamp-3">Lorem
                             ipsum
                             dolor sit amet
                             consectetur
@@ -330,7 +370,7 @@
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                             class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
                             alt="">
-                        <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem
+                        <p class="p-2 md:text-2xl text-lg leading-5 fontNoto line-clamp-3">Lorem
                             ipsum
                             dolor sit amet
                             consectetur
@@ -345,10 +385,10 @@
         </section>
         <section class="md:p-6 p-4">
             <div class="bg-bgClr p-6 rounded-xl max-w-7xl mx-auto">
-                <p class="text-2xl font-semibold fontBaskerville mb-4">Web Stories</p>
+                <p class="text-2xl font-semibold fontNoto mb-4">Web Stories</p>
 
                 <div class="story-feed" id="storyFeed"></div>
-                <!-- Story Overlay -->
+
                 <div class="story-overlay" id="storyOverlay">
                     <div class="story-container">
                         <button class="close-story" id="closeStory">✕</button>
@@ -372,7 +412,7 @@
                 <div>
                     <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                         class="w-full max-h-[400px] object-cover" alt="">
-                    <p class="p-2 text-3xl fontBaskerville font-semibold line-clamp-3">Lorem ipsum dolor sit
+                    <p class="p-2 text-3xl fontNoto line-clamp-3">Lorem ipsum dolor sit
                         amet consectetur
                         adipisicing elit.</p>
                 </div>
@@ -381,7 +421,7 @@
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                             class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
                             alt="">
-                        <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem
+                        <p class="p-2 md:text-2xl text-lg leading-5 fontNoto line-clamp-3">Lorem
                             ipsum
                             dolor sit amet
                             consectetur
@@ -391,7 +431,7 @@
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                             class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
                             alt="">
-                        <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem
+                        <p class="p-2 md:text-2xl text-lg leading-5 fontNoto line-clamp-3">Lorem
                             ipsum
                             dolor sit amet
                             consectetur
@@ -401,7 +441,7 @@
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                             class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
                             alt="">
-                        <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem
+                        <p class="p-2 md:text-2xl text-lg leading-5 fontNoto line-clamp-3">Lorem
                             ipsum
                             dolor sit amet
                             consectetur
@@ -411,7 +451,7 @@
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                             class="md:max-w-full max-w-[80px] md:max-h-[200px] max-h-[80px] md:aspect-video aspect-square object-cover"
                             alt="">
-                        <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem
+                        <p class="p-2 md:text-2xl text-lg leading-5 fontNoto line-clamp-3">Lorem
                             ipsum
                             dolor sit amet
                             consectetur
@@ -436,7 +476,7 @@
                 <div>
                     <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                         class="w-full max-h-[280px] object-cover" alt="">
-                    <p class="p-2 text-2xl leading-6 fontBaskerville font-semibold line-clamp-3">Lorem ipsum dolor sit
+                    <p class="p-2 text-2xl leading-6 fontNoto line-clamp-3">Lorem ipsum dolor sit
                         amet consectetur
                         adipisicing elit.</p>
                 </div>
@@ -444,7 +484,7 @@
                     <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                         class="md:max-w-full max-w-[80px] md:max-h-[280px] max-h-[80px] md:aspect-video aspect-square object-cover"
                         alt="">
-                    <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                    <p class="p-2 md:text-2xl text-lg leading-5 fontNoto line-clamp-3">Lorem ipsum
                         dolor sit amet
                         consectetur
                         adipisicing elit.</p>
@@ -453,7 +493,7 @@
                     <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                         class="md:max-w-full max-w-[80px] md:max-h-[280px] max-h-[80px] md:aspect-video aspect-square object-cover"
                         alt="">
-                    <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                    <p class="p-2 md:text-2xl text-lg leading-5 fontNoto line-clamp-3">Lorem ipsum
                         dolor sit amet
                         consectetur
                         adipisicing elit.</p>
@@ -476,7 +516,7 @@
                 <div>
                     <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                         class="w-full max-h-[280px] object-cover" alt="">
-                    <p class="p-2 text-2xl leading-6 fontBaskerville font-semibold line-clamp-3">Lorem ipsum dolor sit
+                    <p class="p-2 text-2xl leading-6 fontNoto line-clamp-3">Lorem ipsum dolor sit
                         amet consectetur
                         adipisicing elit.</p>
                 </div>
@@ -484,7 +524,7 @@
                     <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                         class="md:max-w-full max-w-[80px] md:max-h-[280px] max-h-[80px] md:aspect-video aspect-square object-cover"
                         alt="">
-                    <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                    <p class="p-2 md:text-2xl text-lg leading-5 fontNoto line-clamp-3">Lorem ipsum
                         dolor sit amet
                         consectetur
                         adipisicing elit.</p>
@@ -493,7 +533,7 @@
                     <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                         class="md:max-w-full max-w-[80px] md:max-h-[280px] max-h-[80px] md:aspect-video aspect-square object-cover"
                         alt="">
-                    <p class="p-2 md:text-2xl text-lg leading-5 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                    <p class="p-2 md:text-2xl text-lg leading-5 fontNoto line-clamp-3">Lorem ipsum
                         dolor sit amet
                         consectetur
                         adipisicing elit.</p>
@@ -503,7 +543,7 @@
                 <div class="flex items-center gap-2">
                     <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                         class="max-h-[80px] aspect-square object-cover" alt="">
-                    <p class="p-2 md:text-2xl text-lg leading-6 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                    <p class="p-2 md:text-2xl text-lg leading-6 fontNoto line-clamp-3">Lorem ipsum
                         dolor sit
                         amet consectetur
                         adipisicing elit.</p>
@@ -511,7 +551,7 @@
                 <div class="flex items-center gap-2">
                     <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                         class="max-h-[80px] aspect-square object-cover" alt="">
-                    <p class="p-2 md:text-2xl text-lg leading-6 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                    <p class="p-2 md:text-2xl text-lg leading-6 fontNoto line-clamp-3">Lorem ipsum
                         dolor sit
                         amet consectetur
                         adipisicing elit.</p>
@@ -519,7 +559,7 @@
                 <div class="flex items-center gap-2">
                     <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                         class="max-h-[80px] aspect-square object-cover" alt="">
-                    <p class="p-2 md:text-2xl text-lg leading-6 fontBaskerville font-semibold line-clamp-3">Lorem ipsum
+                    <p class="p-2 md:text-2xl text-lg leading-6 fontNoto line-clamp-3">Lorem ipsum
                         dolor sit
                         amet consectetur
                         adipisicing elit.</p>
@@ -531,7 +571,7 @@
             </div>
         </section>
     </main>
-    <footer class="py-6 bg-blackClr">
+    <footer class="py-6 bg-black/90">
         <div class="max-w-7xl mx-auto px-6 mx-auto divide-y divide-gray-400 divide-opacity-50">
             <div class="grid md:grid-cols-4 grid-cols-2 gap-4 pb-6">
                 <div class="col-span-2">
@@ -689,7 +729,8 @@
             const thumb = document.createElement("div");
             thumb.classList.add("story-thumbnail");
             thumb.innerHTML = `<img src="${story.thumbnail}" alt="${story.user}" title="${story.user}" />
-                                <p>${story.user}</p>`;
+                                <p class="story-category"><img src="./svgs/showcaseoutline.svg" class="!w-4 !h-4" /> ${story.user}</p>
+                                <p class="story-topic">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>`;
             thumb.addEventListener("click", () => openStory(story));
             storyFeed.appendChild(thumb);
         });
