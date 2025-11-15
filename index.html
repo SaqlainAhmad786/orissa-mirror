@@ -10,6 +10,10 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
     <style type="text/tailwindcss">
         @theme {
             --color-redClr: #ED3500;
@@ -33,7 +37,7 @@
                 </div>
                 <div class="drawer-side">
                     <label for="my-drawer-5" aria-label="close sidebar" class="drawer-overlay"></label>
-                    <div class="menu bg-base-100 h-full min-h-[640px] sm:w-96 w-80 p-4 pt-10 relative">
+                    <div class="menu bg-base-100 h-full min-h-[640px] sm:w-96 w-80 p-4 pt-10 relative !z-[999]">
                         <ul class="border-b border-gray-300 pb-4">
                             <li><a class="fontNoto text-lg">HOME</a></li>
                             <li>
@@ -62,6 +66,8 @@
                             <li><a class="fontNoto text-lg">HEALTH & LIFESTYLE</a></li>
                             <li><a class="fontNoto text-lg">TECH</a></li>
                             <li><a class="fontNoto text-lg">SPORTS</a></li>
+                            <li><a class="fontNoto text-lg">WEATHER</a></li>
+                            <li><a class="fontNoto text-lg">POLITICS</a></li>
                         </ul>
                         <div class="p-4">
                             <a href="#" class="flex items-center gap-1"><i data-lucide="dot"
@@ -200,10 +206,28 @@
             </div>
         </div>
     </header>
-    <main class="max-w-[1480px] mx-auto md:mt-[134px] mt-[74px]">
-        <div class="flex md:px-6 px-4 pt-2">
-            <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">BREAKING</p>
-            <div class="flex-1 bg-blackClr">
+    <main class="max-w-[1480px] mx-auto lg:mt-[120px] mt-[72px]">
+        <div class="lg:block hidden md:px-6 px-4 w-full">
+            <div class="w-full flex gap-14 relative bg-gradient-to-r from-redClr via-redClr to-blackClr">
+                <div class="w-2 h-[140%] bg-white absolute -top-2 md:left-40 sm:left-38 left-35 rotate-[25deg] z-2">
+                </div>
+                <div class="w-1 h-[140%] bg-white absolute -top-2 md:left-44 sm:left-42 left-39 rotate-[25deg] z-2">
+                </div>
+                <div
+                    class="w-20 h-full bg-gradient-to-r from-redClr via-redClr to-transparent absolute top-0 md:left-34 sm:left-42 left-39 z-1">
+                </div>
+                <p class="max-w-fit sm:text-lg font-medium flex items-center gap-1 text-white px-2 py-1">
+                    <img src="./images/favicon.png" class="w-6 h-6" alt="">
+                    BREAKING
+                </p>
+                <div class="flex-1">
+                    <div id="news-marquee" class="splide">
+                        <div class="splide__track">
+                            <ul class="splide__list" id="marqueeList">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -211,7 +235,7 @@
             <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 md:gap-6 sm:gap-4 gap-2">
                 <div class="grid divide-y divide-neutral-300 h-fit md:order-1 order-3">
                     <div
-                        class="flex md:flex-col flex-row items-center md:p-2 md:pt-0 gap-2 py-2 md:border-none border-t">
+                        class="flex md:flex-col flex-row items-center md:p-2 md:pt-0 md:pl-0 gap-2 py-2 md:border-none border-t">
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                             class="md:max-w-full md:max-h-[220px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
                             alt="">
@@ -220,7 +244,7 @@
                             dolor sit amet consectetur
                             adipisicing elit.</p>
                     </div>
-                    <div class="flex md:flex-col flex-row items-center md:p-2 gap-2 py-2">
+                    <div class="flex md:flex-col flex-row items-center md:p-2 md:pl-0 gap-2 py-2">
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                             class="md:max-w-full md:max-h-[220px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
                             alt="">
@@ -229,7 +253,7 @@
                             dolor sit amet consectetur
                             adipisicing elit.</p>
                     </div>
-                    <div class="flex md:flex-col flex-row items-center md:p-2 gap-2 py-2">
+                    <div class="flex md:flex-col flex-row items-center md:p-2 md:pl-0 gap-2 py-2">
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
                             class="md:max-w-full md:max-h-[220px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
                             alt="">
@@ -252,26 +276,28 @@
                                 provident ab sapiente tempora.</p>
                         </div>
                     </div>
-                    <div class="flex items-center text-xl leading-6 gap-4 p-2">
-                        <p class="flex-1 fontNoto line-clamp-3">Lorem ipsum dolor sit amet
-                            consectetur
-                            adipisicing elit. Quibusdam porro in!</p>
+                    <div class="flex items-center md:text-2xl text-xl leading-6 gap-4 p-2">
+                        <p class="flex-1 fontNoto line-clamp-3">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni autem quidem cum minima
+                            aperiam doloremque nisi laudantium nesciunt! Molestiae quos dolore, maxime voluptas eius
+                            sit.
+                        </p>
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
-                            class="max-h-[80px] aspect-[3/2] object-cover" alt="">
+                            class="md:max-h-[120px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover" alt="">
                     </div>
-                    <div class="flex items-center text-xl leading-6 gap-4 p-2">
-                        <p class="flex-1 fontNoto line-clamp-3">Lorem ipsum dolor sit amet
-                            consectetur
-                            adipisicing elit. Quibusdam porro in!</p>
+                    <div class="flex items-center md:text-2xl text-xl leading-6 gap-4 p-2">
+                        <p class="flex-1 fontNoto line-clamp-3">Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Quis sit perferendis repellendus! Ea nulla id et. Temporibus maxime delectus nemo
+                            iusto! Vero nemo perspiciatis distinctio.</p>
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
-                            class="max-h-[80px] aspect-[3/2] object-cover" alt="">
+                            class="md:max-h-[120px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover" alt="">
                     </div>
-                    <div class="flex items-center text-xl leading-6 gap-4 p-2">
-                        <p class="flex-1 fontNoto line-clamp-3">Lorem ipsum dolor sit amet
-                            consectetur
-                            adipisicing elit. Quibusdam porro in!</p>
+                    <div class="flex items-center md:text-2xl text-xl leading-6 gap-4 p-2">
+                        <p class="flex-1 fontNoto line-clamp-3">Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Quis sit perferendis repellendus! Ea nulla id et. Temporibus maxime delectus nemo
+                            iusto! Vero nemo perspiciatis distinctio.</p>
                         <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
-                            class="max-h-[80px] aspect-[3/2] object-cover" alt="">
+                            class="md:max-h-[120px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover" alt="">
                     </div>
                 </div>
                 <div class="lg:col-span-1 md:col-span-3 md:order-3 order-2">
@@ -319,7 +345,7 @@
         </section>
         <section class="md:p-6 p-4">
             <div class="flex mb-2">
-                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">ODISHA LATEST</p>
+                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">ODISHA STATE</p>
                 <div class="flex-1 bg-blackClr">
                 </div>
             </div>
@@ -366,7 +392,7 @@
         </section>
         <section class="md:p-6 p-4">
             <div class="flex mb-2">
-                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">STATE</p>
+                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">CITY</p>
                 <div class="flex-1 bg-blackClr">
                 </div>
             </div>
@@ -426,26 +452,40 @@
                         data-lucide="chevron-right" class="inline w-5 h-5"></i></a>
             </div>
         </section>
+        <!-- STORIES -->
         <section class="md:p-6 p-4">
             <div class="bg-bgClr p-6 rounded-xl max-w-7xl mx-auto">
                 <p class="text-2xl font-semibold fontNoto mb-4">Web Stories</p>
 
                 <div class="story-feed" id="storyFeed"></div>
 
-                <div class="story-overlay" id="storyOverlay">
+                <div class="story-overlay space-x-4" id="storyOverlay">
+                    <button id="prevStory"
+                        class="w-8 h-8 bg-bgClr rounded-full sm:flex hidden justify-center items-center">
+                        <i data-lucide="arrow-left" class="inline w-5 h-5"></i>
+                    </button>
+
                     <div class="story-container">
-                        <button class="close-story" id="closeStory">✕</button>
+                        <button class="close-story" id="closeStory">
+                            <i data-lucide="x" class="inline mx-auto w-5 h-5"></i>
+                        </button>
                         <div class="story-progress"></div>
                         <div class="swiper story-swiper">
                             <div class="swiper-wrapper" id="storySlides"></div>
                         </div>
                     </div>
+
+                    <button id="nextStory"
+                        class="w-8 h-8 bg-bgClr rounded-full sm:flex hidden justify-center items-center">
+                        <i data-lucide="arrow-right" class="inline w-5 h-5"></i>
+                    </button>
                 </div>
             </div>
         </section>
+
         <section class="md:p-6 p-4">
             <div class="flex mb-2">
-                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">STATE</p>
+                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">NATIONAL</p>
                 <div class="flex-1 bg-blackClr">
                 </div>
             </div>
@@ -507,7 +547,7 @@
         </section>
         <section class="md:p-6 p-4">
             <div class="flex mb-2">
-                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">ODISHA LATEST</p>
+                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">WORLD</p>
                 <div class="flex-1 bg-blackClr">
                 </div>
             </div>
@@ -545,7 +585,341 @@
         </section>
         <section class="md:p-6 p-4">
             <div class="flex mb-2">
-                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">INDIA</p>
+                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">BUSINESS</p>
+                <div class="flex-1 bg-blackClr">
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 grid-cols-1 sm:gap-4 gap-2 md:border-b border-neutral-300 sm:pb-4">
+                <div>
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="w-full max-h-[280px] aspect-video object-cover" alt="">
+                    <p class="p-2 text-2xl leading-tight fontNoto line-clamp-3">Lorem ipsum dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex items-center gap-2 md:flex-col flex-row">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="md:max-w-full max-w-[80px] md:max-h-[280px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem ipsum
+                        dolor sit amet
+                        consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex items-center gap-2 md:flex-col flex-row">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="md:max-w-full max-w-[80px] md:max-h-[280px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem ipsum
+                        dolor sit amet
+                        consectetur
+                        adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 grid-cols-1 sm:gap-4 gap-2 mt-2">
+                <div class="flex items-center gap-2">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="max-h-[80px] md:max-w-full max-w-[80px] md:aspect-video aspect-[3/2] object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem ipsum
+                        dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="max-h-[80px] md:max-w-full max-w-[80px] md:aspect-video aspect-[3/2] object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem ipsum
+                        dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="max-h-[80px] md:max-w-full max-w-[80px] md:aspect-video aspect-[3/2] object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem ipsum
+                        dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <a href="#" class="btn bg-redClr border-redClr hover:bg-redClr/80 text-white rounded-lg">View all <i
+                        data-lucide="chevron-right" class="inline w-5 h-5"></i></a>
+            </div>
+        </section>
+        <section class="md:p-6 p-4">
+            <div class="flex mb-2">
+                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">CRIME</p>
+                <div class="flex-1 bg-blackClr">
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
+                <div>
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="w-full max-h-[400px] aspect-video object-cover" alt="">
+                    <p class="p-2 text-3xl fontNoto leading-tight line-clamp-3">Lorem ipsum dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+                    <div class="flex md:flex-col flex-row items-center">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full md:max-h-[200px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
+                            alt="">
+                        <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem
+                            ipsum
+                            dolor sit amet
+                            consectetur
+                            adipisicing elit.</p>
+                    </div>
+                    <div class="flex md:flex-col flex-row items-center">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full md:max-h-[200px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
+                            alt="">
+                        <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem
+                            ipsum
+                            dolor sit amet
+                            consectetur
+                            adipisicing elit.</p>
+                    </div>
+                    <div class="flex md:flex-col flex-row items-center">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full md:max-h-[200px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
+                            alt="">
+                        <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem
+                            ipsum
+                            dolor sit amet
+                            consectetur
+                            adipisicing elit.</p>
+                    </div>
+                    <div class="flex md:flex-col flex-row items-center">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full md:max-h-[200px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
+                            alt="">
+                        <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem
+                            ipsum
+                            dolor sit amet
+                            consectetur
+                            adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <a href="#" class="btn bg-redClr border-redClr hover:bg-redClr/80 text-white rounded-lg">View all <i
+                        data-lucide="chevron-right" class="inline w-5 h-5"></i></a>
+            </div>
+        </section>
+        <section class="md:p-6 p-4">
+            <div class="flex mb-2">
+                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">ENTERTAINMENT</p>
+                <div class="flex-1 bg-blackClr">
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
+                <div>
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="w-full max-h-[280px] aspect-video object-cover" alt="">
+                    <p class="p-2 text-2xl leading-tight fontNoto line-clamp-3">Lorem ipsum dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex md:flex-col flex-row items-center">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="md:max-w-full max-w-[80px] md:max-h-[280px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem ipsum
+                        dolor sit amet
+                        consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex md:flex-col flex-row items-center">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="md:max-w-full max-w-[80px] md:max-h-[280px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem ipsum
+                        dolor sit amet
+                        consectetur
+                        adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <a href="#" class="btn bg-redClr border-redClr hover:bg-redClr/80 text-white rounded-lg">View all <i
+                        data-lucide="chevron-right" class="inline w-5 h-5"></i></a>
+            </div>
+        </section>
+        <section class="md:p-6 p-4">
+            <div class="flex mb-2">
+                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">HEALTH & LIFESTYLE</p>
+                <div class="flex-1 bg-blackClr">
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 grid-cols-1 sm:gap-4 gap-2 md:border-b border-neutral-300 sm:pb-4">
+                <div>
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="w-full max-h-[280px] aspect-video object-cover" alt="">
+                    <p class="p-2 text-2xl leading-tight fontNoto line-clamp-3">Lorem ipsum dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex items-center gap-2 md:flex-col flex-row">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="md:max-w-full max-w-[80px] md:max-h-[280px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem ipsum
+                        dolor sit amet
+                        consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex items-center gap-2 md:flex-col flex-row">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="md:max-w-full max-w-[80px] md:max-h-[280px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem ipsum
+                        dolor sit amet
+                        consectetur
+                        adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 grid-cols-1 sm:gap-4 gap-2 mt-2">
+                <div class="flex items-center gap-2">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="max-h-[80px] md:max-w-full max-w-[80px] md:aspect-video aspect-[3/2] object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem ipsum
+                        dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="max-h-[80px] md:max-w-full max-w-[80px] md:aspect-video aspect-[3/2] object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem ipsum
+                        dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="max-h-[80px] md:max-w-full max-w-[80px] md:aspect-video aspect-[3/2] object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem ipsum
+                        dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <a href="#" class="btn bg-redClr border-redClr hover:bg-redClr/80 text-white rounded-lg">View all <i
+                        data-lucide="chevron-right" class="inline w-5 h-5"></i></a>
+            </div>
+        </section>
+        <section class="md:p-6 p-4">
+            <div class="flex mb-2">
+                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">TECH</p>
+                <div class="flex-1 bg-blackClr">
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
+                <div>
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="w-full max-h-[400px] aspect-video object-cover" alt="">
+                    <p class="p-2 text-3xl fontNoto leading-tight line-clamp-3">Lorem ipsum dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+                    <div class="flex md:flex-col flex-row items-center">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full md:max-h-[200px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
+                            alt="">
+                        <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem
+                            ipsum
+                            dolor sit amet
+                            consectetur
+                            adipisicing elit.</p>
+                    </div>
+                    <div class="flex md:flex-col flex-row items-center">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full md:max-h-[200px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
+                            alt="">
+                        <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem
+                            ipsum
+                            dolor sit amet
+                            consectetur
+                            adipisicing elit.</p>
+                    </div>
+                    <div class="flex md:flex-col flex-row items-center">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full md:max-h-[200px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
+                            alt="">
+                        <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem
+                            ipsum
+                            dolor sit amet
+                            consectetur
+                            adipisicing elit.</p>
+                    </div>
+                    <div class="flex md:flex-col flex-row items-center">
+                        <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                            class="md:max-w-full md:max-h-[200px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
+                            alt="">
+                        <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem
+                            ipsum
+                            dolor sit amet
+                            consectetur
+                            adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <a href="#" class="btn bg-redClr border-redClr hover:bg-redClr/80 text-white rounded-lg">View all <i
+                        data-lucide="chevron-right" class="inline w-5 h-5"></i></a>
+            </div>
+        </section>
+        <section class="md:p-6 p-4">
+            <div class="flex mb-2">
+                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">WEATHER</p>
+                <div class="flex-1 bg-blackClr">
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
+                <div>
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="w-full max-h-[280px] aspect-video object-cover" alt="">
+                    <p class="p-2 text-2xl leading-tight fontNoto line-clamp-3">Lorem ipsum dolor sit
+                        amet consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex md:flex-col flex-row items-center">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="md:max-w-full max-w-[80px] md:max-h-[280px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem ipsum
+                        dolor sit amet
+                        consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="flex md:flex-col flex-row items-center">
+                    <img src="https://www.geoimgr.com/images/samples/england-london-bridge.jpg"
+                        class="md:max-w-full max-w-[80px] md:max-h-[280px] max-h-[80px] md:aspect-video aspect-[3/2] object-cover"
+                        alt="">
+                    <p class="p-2 md:text-2xl text-lg leading-tight fontNoto line-clamp-3">Lorem ipsum
+                        dolor sit amet
+                        consectetur
+                        adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <a href="#" class="btn bg-redClr border-redClr hover:bg-redClr/80 text-white rounded-lg">View all <i
+                        data-lucide="chevron-right" class="inline w-5 h-5"></i></a>
+            </div>
+        </section>
+        <section class="md:p-6 p-4">
+            <div class="flex mb-2">
+                <p class="max-w-fit sm:text-xl font-semibold text-white bg-redClr px-2 py-1">POLITICS</p>
                 <div class="flex-1 bg-blackClr">
                 </div>
             </div>
@@ -736,31 +1110,57 @@
             {
                 id: 1,
                 user: "Saqlain",
+                topic: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro in!",
                 thumbnail: "https://picsum.photos/id/1015/200/200",
                 stories: [
-                    "https://picsum.photos/id/1015/350/600",
-                    "https://picsum.photos/id/1016/350/600",
-                    "https://picsum.photos/id/1018/350/600",
+                    {
+                        url: "https://picsum.photos/id/1015/350/600",
+                        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro in!",
+                    },
+                    {
+                        url: "https://picsum.photos/id/1016/350/600",
+                        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro in!",
+                    }
                 ],
             },
             {
                 id: 2,
                 user: "John",
+                topic: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro in!",
                 thumbnail: "https://picsum.photos/id/1020/200/200",
                 stories: [
-                    "https://picsum.photos/id/1020/350/600",
-                    "https://picsum.photos/id/1021/350/600",
+                    {
+                        url: "https://picsum.photos/id/1020/350/600",
+                        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro in!",
+                    },
+                    {
+                        url: "https://picsum.photos/id/1021/350/600",
+                        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro in!",
+                    }
                 ],
             },
             {
                 id: 3,
                 user: "Emma",
-                thumbnail: "https://picsum.photos/id/1030/200/200",
+                topic: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro in!",
+                thumbnail: "https://picsum.photos/id/1032/200/200",
                 stories: [
-                    "https://picsum.photos/id/1030/350/600",
-                    "https://picsum.photos/id/1031/350/600",
-                    "https://picsum.photos/id/1032/350/600",
-                    "https://picsum.photos/id/1033/350/600",
+                    {
+                        url: "https://picsum.photos/id/1032/350/600",
+                        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro in!",
+                    },
+                    {
+                        url: "https://picsum.photos/id/1033/350/600",
+                        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro in!",
+                    },
+                    {
+                        url: "https://picsum.photos/id/1034/350/600",
+                        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro in!",
+                    },
+                    {
+                        url: "https://picsum.photos/id/1035/350/600",
+                        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro in!",
+                    }
                 ],
             },
         ];
@@ -770,6 +1170,8 @@
         const storySlides = document.getElementById("storySlides");
         const progressContainer = document.querySelector(".story-progress");
         const closeBtn = document.getElementById("closeStory");
+        const nextBtn = document.getElementById("nextStory");
+        const prevBtn = document.getElementById("prevStory");
 
         let swiper;
 
@@ -787,7 +1189,7 @@
             thumb.classList.add("story-thumbnail");
             thumb.innerHTML = `<img src="${story.thumbnail}" alt="${story.user}" title="${story.user}" />
                                 <p class="story-category"><img src="./svgs/showcaseoutline.svg" class="!w-4 !h-4" /> ${story.user}</p>
-                                <p class="story-topic">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>`;
+                                <p class="story-topic">${story.topic}</p>`;
             thumb.addEventListener("click", () => openStory(story));
             storyFeed.appendChild(thumb);
         });
@@ -799,10 +1201,11 @@
 
             // Build slides dynamically
             storySlides.innerHTML = "";
-            story.stories.forEach((url) => {
+            story.stories.forEach((story) => {
                 const slide = document.createElement("div");
                 slide.classList.add("swiper-slide");
-                slide.innerHTML = `<img src="${url}" alt="story image" />`;
+                slide.innerHTML = `<img src="${story.url}" alt="story image" />
+                                    <p class="story-text">${story.text}</p>`;
                 storySlides.appendChild(slide);
             });
 
@@ -821,9 +1224,25 @@
                 on: {
                     init: function () {
                         startProgress(this.activeIndex);
+
+                        // Animate topic text on init (for first slide)
+                        const topics = document.querySelectorAll(".story-text");
+                        topics.forEach((topic) => {
+                            topic.classList.remove("animate");
+                            void topic.offsetWidth; // reflow
+                            topic.classList.add("animate");
+                        });
                     },
                     slideChange: function () {
                         startProgress(this.activeIndex);
+
+                        // Trigger animation on story-topic
+                        const topics = document.querySelectorAll(".story-text");
+                        topics.forEach((topic) => {
+                            topic.classList.remove("animate"); // reset previous
+                            void topic.offsetWidth; // force reflow (restart animation)
+                            topic.classList.add("animate");
+                        });
 
                         // Cancel any scheduled close when user moves manually
                         if (closeTimeout) {
@@ -883,8 +1302,16 @@
             if (!swiper) return;
             const container = document.querySelector(".story-container");
             if (e.target.closest(".close-story")) return;
+            if (screen.width >= 640) return;
             if (e.clientX < container.offsetWidth / 2) swiper.slidePrev();
             else swiper.slideNext();
+        });
+
+        nextBtn.addEventListener("click", () => {
+            if (swiper) swiper.slideNext();
+        });
+        prevBtn.addEventListener("click", () => {
+            if (swiper) swiper.slidePrev();
         });
 
         // === Pause on hold ===
@@ -900,6 +1327,44 @@
         document.addEventListener("touchend", (e) => {
             if (overlay.classList.contains("active") && swiper) swiper.autoplay.start();
         });
+
+        const marqueeData = [
+            { title: "Cyclone alert issued for coastal Odisha", url: "/news/cyclone-alert" },
+            { title: "CM announces new startup policy", url: "/news/startup-policy" },
+            { title: "Odisha FC reaches the finals", url: "/sports/ofc-finals" },
+            { title: "Major scam unearthed in mining case", url: "/news/mining-scam" },
+            { title: "Infrastructure upgrade approved in Bhubaneswar", url: "/news/development" },
+        ];
+
+        // Add items to Splide
+        const marqueeList = document.getElementById("marqueeList");
+
+        marqueeData.forEach((item) => {
+            const li = document.createElement("li");
+            li.className = "splide__slide";
+            li.innerHTML = `<a href="${item.url}">${item.title}</a>`;
+            marqueeList.appendChild(li);
+        });
+
+        // Initialize Splide with AutoScroll
+        document.fonts.ready.then(() => {
+            new Splide("#news-marquee", {
+                type: "loop",
+                perPage: 2.5,
+                drag: false,
+                focus: "center",
+                arrows: false,
+                pagination: false,
+                // gap: "40px",
+                autoScroll: {
+                    speed: 1, // marquee speed
+                    pauseOnHover: true,
+                    pauseOnFocus: false,
+                },
+            }).mount(window.splide.Extensions);
+        });
+
+
     </script>
 
 </body>
